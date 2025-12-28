@@ -1,8 +1,8 @@
 body {
     margin: 0;
     overflow: hidden; /* Evita barras de desplazamiento */
-    background: #000; /* Fondo negro */
-    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+    font-family: 'Poppins', sans-serif; /* Usamos la nueva fuente */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,4 +71,52 @@ h2.year {
     h2.year {
         font-size: 4rem; /* Mitad del tamaño original */
     }
+}
+
+.container {
+    /* EFECTO GLASSMORPHISM */
+    background: rgba(255, 255, 255, 0.05); /* Blanco muy transparente */
+    backdrop-filter: blur(10px); /* Desenfoque de lo que pase detrás */
+    -webkit-backdrop-filter: blur(10px); /* Soporte para Safari/iOS */
+    
+    padding: 3rem 5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde fino sutil */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    
+    /* Mantenemos la transición de aparición */
+    opacity: 0;
+    transition: opacity 3s ease-in-out, transform 0.3s ease;
+}
+
+/* Efecto hover: la tarjeta flota un poco si pasas el mouse */
+.container:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    font-weight: 300; /* Letra fina y elegante */
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    font-size: 3rem; /* Ajustado para la nueva fuente */
+}
+
+h2.year {
+    font-weight: 700; /* Letra gruesa */
+    font-size: 6rem;
+    background: linear-gradient(to bottom, #fff, #ffd700); /* Degradado Oro */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 20px rgba(255, 215, 0, 0.3); /* Sombra dorada */
+}
+
+/* Ajuste Móvil para el Glassmorphism */
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem 1rem;
+        width: 85%;
+    }
+    h1 { font-size: 1.5rem; letter-spacing: 4px; }
+    h2.year { font-size: 3.5rem; }
 }
