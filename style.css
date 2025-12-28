@@ -51,3 +51,24 @@ h2.year {
     /* Efecto sutil para que parezca metálico o brillante */
     text-shadow: 0 0 20px rgba(255, 215, 0, 0.6); 
 }
+
+/* --- VERSIÓN MÓVIL --- */
+@media (max-width: 768px) {
+    /* Ajustamos el contenedor para evitar desbordes */
+    .container {
+        width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+        padding: 0 10px;
+    }
+
+    /* Reducimos el título "HAPPY NEW YEAR" */
+    h1 {
+        font-size: 2rem; /* Mitad del tamaño original */
+        letter-spacing: 2px; /* Menos espacio entre letras */
+        line-height: 1.2; /* Mejor espaciado vertical */
+    }
+
+    /* Reducimos el año "2026" */
+    h2.year {
+        font-size: 4rem; /* Mitad del tamaño original */
+    }
+}

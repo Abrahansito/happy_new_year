@@ -1,6 +1,12 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+// Función para redimensionar el canvas si la pantalla cambia (ej. girar el celular)
+window.addEventListener('resize', function() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+
 // Ajustar el canvas al tamaño de la pantalla
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
