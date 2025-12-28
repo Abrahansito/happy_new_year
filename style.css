@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Evita barras de desplazamiento */
+    background: #000; /* Fondo negro */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Detrás del texto si quieres, o encima con opacidad */
+}
+
+.container {
+    position: relative;
+    z-index: 2; /* El texto va encima de los fuegos artificiales */
+    text-align: center;
+    color: #fff;
+    pointer-events: none; /* Permite hacer clic a través del texto si fuera necesario */
+
+    /* AGREGADO: Estado inicial invisible y transición suave */
+    opacity: 0; 
+    transition: opacity 7s ease-in-out; /* Tarda 7 segundos en aparecer */
+}
+
+/* AGREGADO: Clase que usaremos para mostrar el texto */
+.container.visible {
+    opacity: 1;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+}
+
+h2.year {
+    font-size: 8rem;
+    margin: 0;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    /* Efecto sutil para que parezca metálico o brillante */
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.6); 
+}
